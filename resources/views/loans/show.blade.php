@@ -52,6 +52,13 @@
                 <th>Extension</th>
             </tr>
         </thead>
+        @if ($documents->isEmpty())
+            <tbody>
+                <tr>
+                    <td colspan="9" align="center">No Data Available
+                </td></tr>
+            </tbody>
+        @else
         <tbody>
             @foreach ($documents as $document)
                 <tr>
@@ -62,6 +69,7 @@
                 </tr>
             @endforeach
         </tbody>
+        @endif
     </table>
 
     <br><br>

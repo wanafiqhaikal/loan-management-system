@@ -27,6 +27,7 @@
     <a href="{{ route('loans.create') }}"><button type="button">Add New</button></a>
     <br><br>
 
+
     <table>
         <thead>
             <tr>
@@ -41,6 +42,13 @@
                 <th>Delete</th>
             </tr>
         </thead>
+        @if ($loans->isEmpty())
+        <tbody>
+            <tr>
+                <td colspan="9" align="center">No Data Available
+            </td></tr>
+        </tbody>
+        @else
         <tbody>
             @foreach ($loans as $loan)
                 <tr>
@@ -57,15 +65,16 @@
                     <td>{{ $loan->duration }}</td>
                     <td>{{ number_format($loan->installment / 100, 2) }}</td>
                     <td>
-                        <form action="{{ route('loans.destroy', $loan->loan_id) }}" method="POST">
+                        <form action="{{ route('loans.destroy', $loan->loan_id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this loan?');">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Delete</button>
+                            <button type="submit" class="btn btn-danger" title="Delete Loan">Delete</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
+        @endif
     </table>
 </body>
 </html>
