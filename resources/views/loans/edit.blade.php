@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Loan</title>
+    <title>Edit Loan | Loan Management System</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @include('header')
 </head>
