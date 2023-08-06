@@ -10,12 +10,7 @@ td {
     padding: 8px;
 }
 
-.button-container {
-    text-align: center;
-    margin-top: auto;
-  }
-
-.header-container {
+.container {
     text-align: center;
     margin-top: auto;
 }

@@ -21,7 +21,7 @@
     @endif
     <br>
 
-    <h3 class="header-container">Update Loan</h3>
+    <h3 class="container">Update Loan</h3>
 
     <form action="{{ route('loans.update', $loan->loan_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -60,9 +60,8 @@
         </table>
         <br><br>
 
-        <h3 class="header-container">Uploaded Document</h3>
-
-        <div class="button-container">
+        <div class="container">
+            <h3>Uploaded Document</h3>
             <input type="file" class="form-control" name="uploadFile" id="uploadFile" />
         </div>
         <br><br>
@@ -97,7 +96,7 @@
         </table>
         <br>
 
-        <div class="button-container">
+        <div class="container">
             <button type="submit">Save</button>
             <a href="{{ route('loans.index') }}"><button type="button">Cancel</button></a>
         </div>

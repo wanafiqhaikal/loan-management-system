@@ -16,7 +16,7 @@
     <br><br>
 
     {{-- <h2 class="header-container">LOAN MANAGEMENT SYSTEM</h2> --}}
-    <div class="button-container">
+    <div class="container">
         <a href="{{ route('loans.create') }}"><button type="button">Add New</button></a>
     </div>
     <br><br>

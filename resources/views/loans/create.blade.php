@@ -21,7 +21,7 @@
     @endif
     <br><br><br>
 
-    <h3 class="header-container">Create New Loan</h3>
+    <h3 class="container">Create New Loan</h3>
     <form action="{{ route('loans.store') }}" method="POST">
         @csrf
         <table>
@@ -56,7 +56,7 @@
     </form>
 
     <br><br>
-    <div class="button-container">
+    <div class="container">
         <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
     </div>
 </body>

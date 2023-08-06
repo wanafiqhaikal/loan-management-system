@@ -11,7 +11,7 @@
     <h4>Loan > View</h4>
 
     <br><br>
-    <h3 class="header-container">Loan Details</h3>
+    <h3 class="container">Loan Details</h3>
 
     <table>
         <tr>
@@ -38,7 +38,7 @@
     </table>
     <br><br>
 
-    <h3 class="header-container">Uploaded Document</h3>
+    <h3 class="container">Uploaded Document</h3>
     <table>
         <thead>
             <tr>
@@ -69,7 +69,7 @@
     </table>
 
     <br><br>
-    <div class="button-container">
+    <div class="container">
         <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
     </div>
 </body>
