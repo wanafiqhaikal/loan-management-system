@@ -30,7 +30,7 @@
         <table>
             <tr>
                 <td><strong><label for="loan_id">ID</label></strong></td>
-                <td>{{ $loan->loan_id }}</td>
+                <td><strong>{{ $loan->loan_id }}</strong></td>
             </tr>
             <tr>
                 <td><strong>Customer Name</strong></td>
@@ -39,7 +39,7 @@
             <tr>
                 <td><strong>Type</strong></td>
                 <td>
-                    <select name="type" id="type" required>
+                    <select name="type" id="type" required oninput="updateInstallment()">
                         <option value="1" {{ $loan->type === 1 ? 'selected' : '' }}>Home Loan</option>
                         <option value="2" {{ $loan->type === 2 ? 'selected' : '' }}>Personal Loan</option>
                     </select>
@@ -47,15 +47,18 @@
             </tr>
             <tr>
                 <td><strong>Amount (RM)</strong></td>
-                <td><input type="number" name="amount" id="amount" value="{{ $loan->amount / 100 }}" required></td>
+                <td><input type="number" name="amount" id="amount" value="{{ $loan->amount / 100 }}" required
+                        oninput="updateInstallment()"></td>
             </tr>
             <tr>
                 <td><strong>Duration (Months)</strong></td>
-                <td><input type="number" name="duration" id="duration" value="{{ $loan->duration }}" required></td>
+                <td><input type="number" name="duration" id="duration" value="{{ $loan->duration }}" required
+                        oninput="updateInstallment()"></td>
             </tr>
             <tr>
                 <td><strong>Installment</strong></td>
-                <td>{{ number_format($loan->installment / 100, 2) }}</td>
+                <td><strong><span id="installmentValue">RM
+                            {{ number_format($loan->installment / 100, 2) }}</span><strong></td>
             </tr>
         </table>
         <br><br>
@@ -103,6 +106,31 @@
 
     </form>
 </body>
+<script>
+    function updateInstallment() {
+        const type = parseInt(document.getElementById('type').value);
+        const amount = parseFloat(document.getElementById('amount').value);
+        const duration = parseInt(document.getElementById('duration').value);
+        let installment = "";
+
+        if (!isNaN(type) && !isNaN(amount) && !isNaN(duration)) {
+            if (type === 1) { // Home Loan
+                const interest = 0.005;
+                installment = (amount * interest * Math.pow(1 + interest, duration)) / (Math.pow(1 + interest,
+                    duration) - 1);
+            } else { // Personal Loan
+                const durationYear = duration / 12;
+                installment = (amount * 0.08 * durationYear + amount) / duration;
+            }
+
+            const formattedInstallment = "RM " + (installment).toFixed(2);
+            document.getElementById('installmentValue').innerText = formattedInstallment;
+        } else {
+            document.getElementById('installmentValue').innerText = installment;
+        }
+        document.getElementById('type').addEventListener('change', updateInstallment);
+    }
+</script>
 @include('footer')
 
 </html>

@@ -23,17 +23,17 @@
             <td>{{ $loan->type === 1 ? 'Home Loan' : 'Personal Loan' }}</td>
         </tr>
         <tr>
-            <td><strong>Amount (RM)</strong></td>
+            <td><strong>Amount</strong></td>
             {{-- <td>{{ $loan->amount }}</td> --}}
-            <td>{{ number_format($loan->amount / 100, 2) }}</td>
+            <td>RM {{ number_format($loan->amount / 100, 2) }}</td>
         </tr>
         <tr>
             <td><strong>Duration</strong></td>
-            <td>{{ $loan->duration }}</td>
+            <td>{{ $loan->duration }} months</td>
         </tr>
         <tr>
             <td><strong>Installment</strong></td>
-            <td>{{ number_format($loan->installment / 100, 2) }}</td>
+            <td>RM {{ number_format($loan->installment / 100, 2) }}</td>
         </tr>
     </table>
     <br><br>
