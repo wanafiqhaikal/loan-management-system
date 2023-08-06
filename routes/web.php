@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoanController;
 
+Route::get('/', [LoanController::class, 'index'])->name('home');
 Route::get('/loans', [LoanController::class, 'index'])->name('loans.index');
 Route::get('/loans/create', [LoanController::class, 'create'])->name('loans.create');
 Route::post('/loans', [LoanController::class, 'store'])->name('loans.store');

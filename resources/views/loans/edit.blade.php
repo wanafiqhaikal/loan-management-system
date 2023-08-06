@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html>
-<style>
-    table {
-        border-collapse: collapse;
-    }
-
-    th,
-    td {
-        border: 1px solid black;
-        padding: 8px;
-    }
-</style>
-
 <head>
     <title>Edit Loan</title>
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
 
 <body>
