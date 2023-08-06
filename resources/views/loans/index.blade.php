@@ -3,6 +3,7 @@
 <head>
     <title>List of Loans</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    @include('header')
 </head>
 
 <body>
@@ -13,7 +14,10 @@
     @endif
     <br><br>
 
-    <a href="{{ route('loans.create') }}"><button type="button">Add New</button></a>
+    {{-- <h2 class="header-container">LOAN MANAGEMENT SYSTEM</h2> --}}
+    <div class="button-container">
+        <a href="{{ route('loans.create') }}"><button type="button">Add New</button></a>
+    </div>
     <br><br>
 
 
@@ -66,4 +70,5 @@
         @endif
     </table>
 </body>
+@include('footer')
 </html>

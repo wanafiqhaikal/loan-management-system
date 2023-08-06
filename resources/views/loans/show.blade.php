@@ -3,10 +3,14 @@
 <head>
     <title>Loan Details</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    @include('header')
 </head>
 
 <body>
     <h4>Loan > View</h4>
+    
+    <br><br>
+    <h3 class="header-container">Loan Details</h3>
 
     <table>
         <tr>
@@ -33,6 +37,7 @@
     </table>
     <br><br>
 
+    <h3 class="header-container">Uploaded Document</h3>
     <table>
         <thead>
             <tr>
@@ -62,7 +67,9 @@
     </table>
 
     <br><br>
-    <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
+    <div class="button-container">
+        <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
+    </div>
 </body>
-
+@include('footer')
 </html>

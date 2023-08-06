@@ -3,6 +3,7 @@
 <head>
     <title>Edit Loan</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    @include('header')
 </head>
 
 <body>
@@ -17,7 +18,9 @@
             </ul>
         </div>
     @endif
-    <br><br>
+    <br>
+
+    <h3 class="header-container">Update Loan</h3>
 
     <form action="{{ route('loans.update', $loan->loan_id) }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -25,15 +28,15 @@
 
         <table>
             <tr>
-                <td><label for="loan_id">ID</label></td>
+                <td><strong><label for="loan_id">ID</label></strong></td>
                 <td>{{ $loan->loan_id }}</td>
             </tr>
             <tr>
-                <td>Customer Name</td>
+                <td><strong>Customer Name</strong></td>
                 <td><input type="text" name="name" id="name" value="{{ $loan->name }}" required></td>
             </tr>
             <tr>
-                <td>Type</td>
+                <td><strong>Type</strong></td>
                 <td>
                     <select name="type" id="type" required>
                         <option value="1" {{ $loan->type === 1 ? 'selected' : '' }}>Home Loan</option>
@@ -42,23 +45,25 @@
                 </td>
             </tr>
             <tr>
-                <td>Amount (RM)</td>
+                <td><strong>Amount (RM)</strong></td>
                 <td><input type="number" name="amount" id="amount" value="{{ $loan->amount / 100}}" required></td>
             </tr>
             <tr>
-                <td>Duration (Months)</td>
+                <td><strong>Duration (Months)</strong></td>
                 <td><input type="number" name="duration" id="duration" value="{{ $loan->duration }}" required></td>
             </tr>
             <tr>
-                <td>Installment</td>
+                <td><strong>Installment</strong></td>
                 <td>{{ number_format($loan->installment / 100, 2) }}</td>
             </tr>
         </table>
         <br><br>
 
-        <u><h4>Uploaded Document</h4></u>
+        <h3 class="header-container">Uploaded Document</h3>
 
-        <input type="file" class="form-control" name="uploadFile" id="uploadFile" />
+        <div class="button-container">
+            <input type="file" class="form-control" name="uploadFile" id="uploadFile" />
+        </div>
         <br><br>
 
         <table>
@@ -88,10 +93,14 @@
             </tbody>
             @endif
         </table>
-        <br><br>
+        <br>
 
-        <button type="submit">Save</button>
-        <a href="{{ route('loans.index') }}"><button type="button">Cancel</button></a>
+        <div class="button-container">
+            <button type="submit">Save</button>
+            <a href="{{ route('loans.index') }}"><button type="button">Cancel</button></a>
+        </div>
+
     </form>
 </body>
+@include('footer')
 </html>

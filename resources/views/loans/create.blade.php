@@ -3,6 +3,7 @@
 <head>
     <title>Add New Loan</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    @include('header')
 </head>
 
 <body>
@@ -17,8 +18,9 @@
             </ul>
         </div>
     @endif
-    <br><br>
+    <br><br><br>
 
+    <h3 class="header-container">Create New Loan</h3>
     <form action="{{ route('loans.store') }}" method="POST">
         @csrf
         <table>
@@ -53,6 +55,10 @@
     </form>
 
     <br><br>
-    <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
+    <div class="button-container">
+        <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
+    </div>
 </body>
+<br><br><br><br>
+@include('footer')
 </html>
