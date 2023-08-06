@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Edit Loan | Loan Management System</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
@@ -46,7 +47,7 @@
             </tr>
             <tr>
                 <td><strong>Amount (RM)</strong></td>
-                <td><input type="number" name="amount" id="amount" value="{{ $loan->amount / 100}}" required></td>
+                <td><input type="number" name="amount" id="amount" value="{{ $loan->amount / 100 }}" required></td>
             </tr>
             <tr>
                 <td><strong>Duration (Months)</strong></td>
@@ -75,22 +76,23 @@
                 </tr>
             </thead>
             @if ($documents->isEmpty())
-            <tbody>
-                <tr>
-                    <td colspan="9" align="center">No Data Available
-                </td></tr>
-            </tbody>
-            @else
-            <tbody>
-                @foreach ($documents as $document)
+                <tbody>
                     <tr>
-                        <td align="center"><a
-                                href="{{ route('loans.download', ['file' => $document->file_name]) }}">X</a></td>
-                        <td>{{ $document->file_name }}</td>
-                        <td>{{ $document->extension }}</td>
+                        <td colspan="9" align="center">No Data Available
+                        </td>
                     </tr>
-                @endforeach
-            </tbody>
+                </tbody>
+            @else
+                <tbody>
+                    @foreach ($documents as $document)
+                        <tr>
+                            <td align="center"><a
+                                    href="{{ route('loans.download', ['file' => $document->file_name]) }}">X</a></td>
+                            <td>{{ $document->file_name }}</td>
+                            <td>{{ $document->extension }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
             @endif
         </table>
         <br>
@@ -103,4 +105,5 @@
     </form>
 </body>
 @include('footer')
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Add New Loan | Loan Management System</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
@@ -61,4 +62,5 @@
 </body>
 <br><br><br><br>
 @include('footer')
+
 </html>

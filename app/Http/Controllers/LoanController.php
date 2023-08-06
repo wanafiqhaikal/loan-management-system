@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Loan;
 use App\Models\Document;
+use App\Models\Loan;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
 
@@ -12,12 +12,14 @@ class LoanController extends Controller
     public function index()
     {
         $loans = Loan::all();
+
         return view('loans.index', compact('loans'));
     }
 
     public function indexFile()
     {
         $documents = Document::all();
+
         return view('loans.edit', compact('documents'));
     }
 
@@ -58,12 +60,14 @@ class LoanController extends Controller
     public function show(Loan $loan)
     {
         $documents = $loan->documents;
+
         return view('loans.show', compact('loan', 'documents'));
     }
 
     public function edit(Loan $loan)
     {
         $documents = $loan->documents;
+
         return view('loans.edit', compact('loan', 'documents'));
     }
 
@@ -120,8 +124,8 @@ class LoanController extends Controller
 
     public function download($file)
     {
-        if (!empty($file) && file_exists(public_path('assets/' . $file))) {
-            return response()->download(public_path('assets/' . $file));
+        if (!empty($file) && file_exists(public_path('assets/'.$file))) {
+            return response()->download(public_path('assets/'.$file));
         } else {
             throw new FileNotFoundException($file);
         }
@@ -130,6 +134,7 @@ class LoanController extends Controller
     public function destroy(Loan $loan)
     {
         $loan->delete();
+
         return redirect('/loans')->with('success', 'Loan application deleted successfully.');
     }
 }

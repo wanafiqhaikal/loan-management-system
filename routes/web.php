@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoanController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoanController::class, 'index'])->name('home');
 Route::get('/loans', [LoanController::class, 'index'])->name('loans.index');

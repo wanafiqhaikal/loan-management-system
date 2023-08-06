@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Loan Details  | Loan Management System</title>
+    <title>Loan Details | Loan Management System</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @include('header')
 </head>
 
 <body>
     <h4>Loan > View</h4>
-    
+
     <br><br>
     <h3 class="header-container">Loan Details</h3>
 
@@ -50,19 +51,20 @@
             <tbody>
                 <tr>
                     <td colspan="9" align="center">No Data Available
-                </td></tr>
+                    </td>
+                </tr>
             </tbody>
         @else
-        <tbody>
-            @foreach ($documents as $document)
-                <tr>
-                    <td align="center"><a href="{{ route('loans.download', ['file' => $document->file_name]) }}">X</a>
-                    </td>
-                    <td>{{ $document->file_name }}</td>
-                    <td>{{ $document->extension }}</td>
-                </tr>
-            @endforeach
-        </tbody>
+            <tbody>
+                @foreach ($documents as $document)
+                    <tr>
+                        <td align="center"><a href="{{ route('loans.download', ['file' => $document->file_name]) }}">X</a>
+                        </td>
+                        <td>{{ $document->file_name }}</td>
+                        <td>{{ $document->extension }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
         @endif
     </table>
 
@@ -72,4 +74,5 @@
     </div>
 </body>
 @include('footer')
+
 </html>
