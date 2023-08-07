@@ -11,7 +11,7 @@
     <h4>Loan > New</h4>
 
     @if ($errors->any())
-        <div>
+        <div class="container">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>

@@ -11,7 +11,7 @@
     <h4>Loan > List</h4>
 
     @if (session('success'))
-        <div>{{ session('success') }}</div>
+        <div class="container">{{ session('success') }}</div>
     @endif
     <br><br>
 
