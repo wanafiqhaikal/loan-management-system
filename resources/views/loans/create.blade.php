@@ -24,7 +24,8 @@
     <br><br><br>
 
     <h3 class="container">Create New Loan</h3>
-    <form action="{{ route('loans.store') }}" method="POST" onsubmit="return confirm('Are you sure you want to submit this loan?');">
+    <form action="{{ route('loans.store') }}" method="POST"
+        onsubmit="return confirm('Are you sure you want to submit this loan?');">
         @csrf
         <table>
             <tr>
@@ -55,18 +56,14 @@
                 <td><label>Installment</label></td>
                 <td><strong><span id="installmentValue">RM </span><strong></td>
             </tr>
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                    <button type="submit">Submit</button>
-                </td>
-            </tr>
-        </table>
-    </form>
 
-    <br><br>
-    <div class="container">
-        <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
-    </div>
+        </table>
+        <br><br>
+        <div class="container">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a href="{{ route('loans.index') }}"><button type="button" class="btn btn-secondary">Back to List</button></a>
+        </div>
+    </form>
 </body>
 <script>
     function updateInstallment() {

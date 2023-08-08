@@ -92,8 +92,11 @@
                 <tbody>
                     @foreach ($documents as $document)
                         <tr>
-                            <td align="center"><a
-                                    href="{{ route('loans.download', ['file' => $document->file_name]) }}">X</a></td>
+                            <td align="center">
+                                <a href="{{ route('loans.download', ['file' => $document->file_name]) }}">
+                                    <button class="btn btn-primary">Download</button>
+                                </a>
+                            </td>
                             <td>{{ $document->file_name }}</td>
                             <td>{{ $document->extension }}</td>
                         </tr>
@@ -104,8 +107,8 @@
         <br>
 
         <div class="container">
-            <button type="submit">Save</button>
-            <a href="{{ route('loans.index') }}"><button type="button">Cancel</button></a>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a href="{{ route('loans.index') }}"><button type="button" class="btn btn-secondary">Cancel</button></a>
         </div>
 
     </form>

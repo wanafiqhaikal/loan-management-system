@@ -14,8 +14,6 @@
 </head>
 
 <body>
-    {{-- <h4>Loan > View</h4> --}}
-
 <br><br>
 <h3 class="container">Loan Details</h3>
 
@@ -64,7 +62,10 @@
             <tbody>
                 @foreach ($documents as $document)
                     <tr>
-                        <td align="center"><a href="{{ route('loans.download', ['file' => $document->file_name]) }}">X</a>
+                        <td align="center">
+                            <a href="{{ route('loans.download', ['file' => $document->file_name]) }}">
+                                <button class="btn btn-primary">Download</button>
+                            </a>
                         </td>
                         <td>{{ $document->file_name }}</td>
                         <td>{{ $document->extension }}</td>
@@ -76,7 +77,7 @@
 
     <br><br>
     <div class="container">
-        <a href="{{ route('loans.index') }}"><button type="button">Back to List</button></a>
+        <a href="{{ route('loans.index') }}"><button type="button" class="btn btn-secondary">Back to List</button></a>
     </div>
 </body>
 @include('footer')

@@ -18,7 +18,7 @@
     <br><br>
 
     <div class="container">
-        <a href="{{ route('loans.create') }}"><button type="button">Add New</button></a>
+        <a href="{{ route('loans.create') }}"><button type="button" class="btn btn-primary">Add New</button></a>
     </div>
     <br><br>
 
@@ -49,10 +49,10 @@
                 @foreach ($loans as $loan)
                     <tr>
                         <td>
-                            <a href="{{ route('loans.show', $loan->loan_id) }}"><button type="button">View</button></a>
+                            <a href="{{ route('loans.show', $loan->loan_id) }}"><button type="button" class="btn btn-dark">View</button></a>
                         </td>
                         <td>
-                            <a href="{{ route('loans.edit', $loan->loan_id) }}"><button type="button">Edit</button></a>
+                            <a href="{{ route('loans.edit', $loan->loan_id) }}"><button type="button" class="btn btn-info">Edit</button></a>
                         </td>
                         <td>{{ $loan->loan_id }}</td>
                         <td>{{ $loan->name }}</td>
