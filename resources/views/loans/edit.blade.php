@@ -26,7 +26,8 @@
 
     <h3 class="container">Update Loan</h3>
 
-    <form action="{{ route('loans.update', $loan->loan_id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('loans.update', $loan->loan_id) }}" method="POST" enctype="multipart/form-data"
+        onsubmit="return confirm('Are you sure you want to update this loan?');">
         @csrf
         @method('PUT')
 

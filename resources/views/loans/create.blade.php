@@ -24,7 +24,7 @@
     <br><br><br>
 
     <h3 class="container">Create New Loan</h3>
-    <form action="{{ route('loans.store') }}" method="POST">
+    <form action="{{ route('loans.store') }}" method="POST" onsubmit="return confirm('Are you sure you want to submit this loan?');">
         @csrf
         <table>
             <tr>
