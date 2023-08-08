@@ -5,17 +5,18 @@
     <title>List of Loans | Loan Management System</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @include('header')
+    <div class="breadcrumb custom-breadcrumb">
+        <a class="breadcrumb-item">Home</a>
+    </div>
 </head>
 
 <body>
-    <h4>Loan > List</h4>
 
     @if (session('success'))
         <div class="container">{{ session('success') }}</div>
     @endif
     <br><br>
 
-    {{-- <h2 class="header-container">LOAN MANAGEMENT SYSTEM</h2> --}}
     <div class="container">
         <a href="{{ route('loans.create') }}"><button type="button">Add New</button></a>
     </div>

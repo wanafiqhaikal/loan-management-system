@@ -5,10 +5,13 @@
     <title>Edit Loan | Loan Management System</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @include('header')
+    <div class="breadcrumb custom-breadcrumb">
+        <a class="breadcrumb-item" href="{{ route('loans.index') }}">Home</a>
+        <span class="breadcrumb-item">Edit</span>
+    </div>
 </head>
 
 <body>
-    <h4>Loan > Edit</h4>
 
     @if ($errors->any())
         <div class="container">

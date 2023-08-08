@@ -5,13 +5,19 @@
     <title>Loan Details | Loan Management System</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @include('header')
+    <div class="breadcrumb custom-breadcrumb">
+        <a class="breadcrumb-item" href="{{ route('loans.index') }}">Home</a>
+    <span class="breadcrumb-item">View</span>
+</div>
+
+</div>
 </head>
 
 <body>
-    <h4>Loan > View</h4>
+    {{-- <h4>Loan > View</h4> --}}
 
-    <br><br>
-    <h3 class="container">Loan Details</h3>
+<br><br>
+<h3 class="container">Loan Details</h3>
 
     <table>
         <tr>

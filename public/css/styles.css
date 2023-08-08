@@ -50,3 +50,33 @@ body {
 h4 {
     margin-left: 30px;
 }
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.breadcrumb-item {
+    color: #05203e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item:hover {
+    color: #0d5199;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: " > ";
+    margin: 0 5px;
+    color: #666;
+}
+
+.custom-breadcrumb {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
