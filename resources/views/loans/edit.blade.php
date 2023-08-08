@@ -38,12 +38,12 @@
             </tr>
             <tr>
                 <td><strong>Customer Name</strong></td>
-                <td><input type="text" name="name" id="name" value="{{ $loan->name }}" required></td>
+                <td><input type="text" name="name" id="name" value="{{ $loan->name }}" class="form-control" required></td>
             </tr>
             <tr>
                 <td><strong>Type</strong></td>
                 <td>
-                    <select name="type" id="type" required oninput="updateInstallment()">
+                    <select name="type" id="type" required oninput="updateInstallment()" class="btn btn-primary dropdown-toggle">
                         <option value="1" {{ $loan->type === 1 ? 'selected' : '' }}>Home Loan</option>
                         <option value="2" {{ $loan->type === 2 ? 'selected' : '' }}>Personal Loan</option>
                     </select>
@@ -51,12 +51,12 @@
             </tr>
             <tr>
                 <td><strong>Amount (RM)</strong></td>
-                <td><input type="number" name="amount" id="amount" value="{{ $loan->amount / 100 }}" required
+                <td><input type="number" name="amount" id="amount" value="{{ $loan->amount / 100 }}" class="form-control" required
                         oninput="updateInstallment()"></td>
             </tr>
             <tr>
                 <td><strong>Duration (Months)</strong></td>
-                <td><input type="number" name="duration" id="duration" value="{{ $loan->duration }}" required
+                <td><input type="number" name="duration" id="duration" value="{{ $loan->duration }}" class="form-control" required
                         oninput="updateInstallment()"></td>
             </tr>
             <tr>

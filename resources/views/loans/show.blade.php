@@ -9,8 +9,6 @@
         <a class="breadcrumb-item" href="{{ route('loans.index') }}">Home</a>
     <span class="breadcrumb-item">View</span>
 </div>
-
-</div>
 </head>
 
 <body>

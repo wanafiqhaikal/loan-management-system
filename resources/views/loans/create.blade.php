@@ -30,12 +30,12 @@
         <table>
             <tr>
                 <td><label for="name">Name</label></td>
-                <td><input type="text" name="name" id="name" value="{{ old('name') }}" required></td>
+                <td><input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control" required></td>
             </tr>
             <tr>
                 <td><label for="type">Type</label></td>
                 <td>
-                    <select name="type" id="type" required oninput="updateInstallment()">
+                    <select name="type" id="type" required oninput="updateInstallment()" class="btn btn-primary dropdown-toggle">
                         <option value="">Please select</option>
                         <option value="1" {{ old('type') == 1 ? 'selected' : '' }}>Home Loan</option>
                         <option value="2" {{ old('type') == 2 ? 'selected' : '' }}>Personal Loan</option>
@@ -44,12 +44,12 @@
             </tr>
             <tr>
                 <td><label for="amount">Amount (RM)</label></td>
-                <td><input type="number" name="amount" id="amount" value="{{ old('amount') }}" required
+                <td><input type="number" name="amount" id="amount" value="{{ old('amount') }}" class="form-control" required
                         oninput="updateInstallment()"></td>
             </tr>
             <tr>
                 <td><label for="duration">Duration (Months)</label></td>
-                <td><input type="number" name="duration" id="duration" value="{{ old('duration') }}" required
+                <td><input type="number" name="duration" id="duration" value="{{ old('duration') }}" class="form-control" required
                         oninput="updateInstallment()"></td>
             </tr>
             <tr>
